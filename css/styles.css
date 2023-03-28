@@ -1,0 +1,114 @@
+:root {
+  --ancho: 250px;
+  --alto: calc(var(--ancho)*1.2);
+  --ladocuadrado: calc(var(--ancho)*0.8857);
+}
+
+body{
+  font-family: 'Schoolbell', cursive, arial, serif;
+  font-size: 1.5em;
+  background: #444;
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dcdbe5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23a592ac' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.shadow {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 3em;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: absolute; 
+  left: 0; 
+  top: 32px; 
+  width: 100%; 
+  text-align: center; 
+  color: white;
+  text-shadow: 0 0 0.3em black;
+  z-index: -1;
+}
+
+.text{
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 3em;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-image: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255,119,255,1) 65%, rgba(255,119,119,1) 70%, rgba(119,255,119,1) 75%, rgba(255,255,119,1) 80%, rgba(119,119,255,1) 85%, rgba(255,255,255,1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
+  background-position: -200%;
+  transition: all ease 2s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.text:hover{
+  background-position: 0%;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  max-width: 1200px;
+}
+
+.image-gallery li {
+  list-style:none;
+  width: var(--ancho);
+  height: var(--alto);
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  cursor: pointer;
+  background:#fff;
+  border: 1px solid #BFBFBF;
+  border-radius: 2px;
+  
+  background-color: #F2F2F2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='p' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='rotate(45) scale(0.1)'%3E%3Cpath id='a' data-color='fill' fill='none' stroke='%23FFF' stroke-width='2.01' d='M50 50h50v50H50zM0 0h50v50H0z'%3E%3C/path%3E%3Cuse xlink:href='%23a' x='50' y='-50'%3E%3C/use%3E%3Cuse xlink:href='%23a' x='-50' y='50'%3E%3C/use%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23p)' width='100%25' height='100%25'%3E%3C/rect%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  z-index: 0;
+  
+  -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  
+  -o-transition:all 0.3s ease;
+  -moz-transition:all 0.3s ease;
+  -webkit-transition:all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.image-gallery li:hover {
+  z-index: 1;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+  transform: scale(1.3);
+}
+
+.image-gallery li img {
+  object-fit: cover;
+  width: var(--ladocuadrado);
+  height: var(--ladocuadrado);
+  vertical-align: middle;
+  margin-top: 6%;
+}
+
+/* Quitar banner de 000webhost */
+img[alt~="www.000webhost.com"],
+.disclaimer {
+    display: none;
+}
